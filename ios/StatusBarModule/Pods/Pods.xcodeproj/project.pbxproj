@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02AA4A85428AB1623A23C559B3E5D08B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A3DDF8130D13E338A852F030639670C1 /* Pods-StatusBarModule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4ABFBB94E3CF914853B71C6E28437E /* Pods-StatusBarModule-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		139C6501AB7333851E259AE999E6F2A5 /* NebulaCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NebulaCore.framework; path = ios/NebulaCore2/NebulaCore/OUTPUT/NebulaCore.framework; sourceTree = "<group>"; };
+		314C7FCE2570D14AB2D827890B448308 /* libPods-StatusBarModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-StatusBarModule.a"; path = "libPods-StatusBarModule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3270E4A1AF7D5533BBE8B0B52F003C00 /* Pods-StatusBarModule-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StatusBarModule-frameworks.sh"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A14CEA7B49B1C08E54EC1A86BD3E385D /* Pods-StatusBarModule-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StatusBarModule-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AAE606C2511D5F390819405A2D6B6F96 /* Pods-StatusBarModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StatusBarModule.debug.xcconfig"; sourceTree = "<group>"; };
+		BE92E1CBBDAFA5917F82C2DDE59C5EA7 /* Pods-StatusBarModule-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StatusBarModule-resources.sh"; sourceTree = "<group>"; };
+		CFE183FDBB376FDA69F13592DB9B702F /* Pods-StatusBarModule-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StatusBarModule-acknowledgements.plist"; sourceTree = "<group>"; };
+		DF5E4F4F8C60CDB03935C710DFDE1A5E /* Pods-StatusBarModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StatusBarModule.release.xcconfig"; sourceTree = "<group>"; };
+		EB4ABFBB94E3CF914853B71C6E28437E /* Pods-StatusBarModule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StatusBarModule-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6A07B54A40F116E41893BF2F29C063C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AA4A85428AB1623A23C559B3E5D08B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		051CB843D0DC12DD0AE76CA890215A07 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6AD5D9BAB7E4E152BC5D2CFFDF2A9262 /* Pods-StatusBarModule */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5850789E72BC5E0837A013670D79DBB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				139C6501AB7333851E259AE999E6F2A5 /* NebulaCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6AD5D9BAB7E4E152BC5D2CFFDF2A9262 /* Pods-StatusBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				A14CEA7B49B1C08E54EC1A86BD3E385D /* Pods-StatusBarModule-acknowledgements.markdown */,
+				CFE183FDBB376FDA69F13592DB9B702F /* Pods-StatusBarModule-acknowledgements.plist */,
+				EB4ABFBB94E3CF914853B71C6E28437E /* Pods-StatusBarModule-dummy.m */,
+				3270E4A1AF7D5533BBE8B0B52F003C00 /* Pods-StatusBarModule-frameworks.sh */,
+				BE92E1CBBDAFA5917F82C2DDE59C5EA7 /* Pods-StatusBarModule-resources.sh */,
+				AAE606C2511D5F390819405A2D6B6F96 /* Pods-StatusBarModule.debug.xcconfig */,
+				DF5E4F4F8C60CDB03935C710DFDE1A5E /* Pods-StatusBarModule.release.xcconfig */,
+			);
+			name = "Pods-StatusBarModule";
+			path = "Target Support Files/Pods-StatusBarModule";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				9FDD552083F72C6B61B6723F5825B795 /* Pods */,
+				CE06958FA17642A4D00B6705047F5CB2 /* Products */,
+				051CB843D0DC12DD0AE76CA890215A07 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		839C264B2DF4651BB94678AF9CB56F17 /* NebulaCore2 */ = {
+			isa = PBXGroup;
+			children = (
+				5850789E72BC5E0837A013670D79DBB3 /* Frameworks */,
+			);
+			name = NebulaCore2;
+			path = NebulaCore2;
+			sourceTree = "<group>";
+		};
+		9FDD552083F72C6B61B6723F5825B795 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				839C264B2DF4651BB94678AF9CB56F17 /* NebulaCore2 */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE06958FA17642A4D00B6705047F5CB2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				314C7FCE2570D14AB2D827890B448308 /* libPods-StatusBarModule.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6323DBD954C5568957479E48F5EDC830 /* Pods-StatusBarModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7053920A3AF0162BB82C0BA11B77724E /* Build configuration list for PBXNativeTarget "Pods-StatusBarModule" */;
+			buildPhases = (
+				86BF579D7B0B1CADF2E2BCE1320565A0 /* Sources */,
+				F6A07B54A40F116E41893BF2F29C063C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-StatusBarModule";
+			productName = "Pods-StatusBarModule";
+			productReference = 314C7FCE2570D14AB2D827890B448308 /* libPods-StatusBarModule.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CE06958FA17642A4D00B6705047F5CB2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6323DBD954C5568957479E48F5EDC830 /* Pods-StatusBarModule */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86BF579D7B0B1CADF2E2BCE1320565A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3DDF8130D13E338A852F030639670C1 /* Pods-StatusBarModule-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		163D87BE96A63549B0EACF1CC31A2E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		707B86CFB21B645E37109F39754D4051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B4919C1381B42ED1D6B104BF1D725F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAE606C2511D5F390819405A2D6B6F96 /* Pods-StatusBarModule.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FAE482E8E482CC6878688B7E8E5A6F2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF5E4F4F8C60CDB03935C710DFDE1A5E /* Pods-StatusBarModule.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				163D87BE96A63549B0EACF1CC31A2E90 /* Debug */,
+				707B86CFB21B645E37109F39754D4051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7053920A3AF0162BB82C0BA11B77724E /* Build configuration list for PBXNativeTarget "Pods-StatusBarModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B4919C1381B42ED1D6B104BF1D725F4 /* Debug */,
+				FAE482E8E482CC6878688B7E8E5A6F2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
