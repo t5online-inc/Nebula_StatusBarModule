@@ -13,15 +13,32 @@
 
 - (void)setStatusBar:(NSNumber*)isHidden backgroundColor:(NSString*)backgroundColor isDefault:(NSNumber*)isDefault
 {
-    UIViewController * viewCon = [[[UIApplication sharedApplication] delegate] window].rootViewController;
-    if([viewCon isKindOfClass:[NBWebViewController class]]){
-        UIColor * color = [UIColor colorWithHexString:backgroundColor];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [((NBWebViewController*)viewCon) setStatusBar:[isHidden boolValue] backgroundColor:color isDefault:[isDefault boolValue]];
+    BOOL isSync = [self.bridgeContainer isSync];
+    NSDictionary* retData = nil;
+    
+    if (isSync) {
+        retData = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 @(STATUS_CODE_ERROR) , @"code",
+                                 @"unsupported syncronize" , @"message",
+                                 nil];
+    } else {
+        NBWebViewController* viewController = (NBWebViewController*)self.bridgeContainer.viewController;
+        
+        if([viewController isKindOfClass:[NBWebViewController class]]){
+            UIColor* color = [UIColor colorWithHexString:backgroundColor];
             
-        });
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [viewController setStatusBar:[isHidden boolValue] backgroundColor:color isDefault:[isDefault boolValue]];
+            });
+        }
+        
+        retData = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 @(STATUS_CODE_SUCCESS) , @"code",
+                                 @"" , @"message",
+                                 nil];
     }
-    [self resolve];
+    
+    [self resolve:retData];
 }
 
 @end

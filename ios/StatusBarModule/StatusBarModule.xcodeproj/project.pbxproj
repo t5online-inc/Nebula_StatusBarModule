@@ -171,6 +171,7 @@
 				TargetAttributes = {
 					EF7F15661EF11F0000E637EB = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9LGNSY89WE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -386,6 +387,7 @@
 			baseConfigurationReference = C27ABD385FE32E62944E3912 /* Pods-StatusBarModule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9LGNSY89WE;
 				INFOPLIST_FILE = StatusBarModule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.t5online.StatusBarModule;
@@ -398,6 +400,7 @@
 			baseConfigurationReference = C9C7ACE7F7D56D70B05CD51E /* Pods-StatusBarModule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9LGNSY89WE;
 				INFOPLIST_FILE = StatusBarModule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.t5online.StatusBarModule;
