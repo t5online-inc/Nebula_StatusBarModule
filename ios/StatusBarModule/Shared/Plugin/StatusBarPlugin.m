@@ -13,29 +13,28 @@
 
 - (void)setStatusBar:(NSNumber*)isHidden backgroundColor:(NSString*)backgroundColor isDefault:(NSNumber*)isDefault
 {
+    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
     BOOL isSync = [self.bridgeContainer isSync];
-    NSDictionary* retData = nil;
     
     if (isSync) {
-        retData = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 @(STATUS_CODE_ERROR) , @"code",
-                                 @"unsupported syncronize" , @"message",
-                                 nil];
+        [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
+        [retData setObject:@"unsupported syncronize" forKey:@"message"];
     } else {
-        NBWebViewController* viewController = (NBWebViewController*)self.bridgeContainer.viewController;
+        UIViewController* viewController = self.bridgeContainer.viewController;
         
         if([viewController isKindOfClass:[NBWebViewController class]]){
             UIColor* color = [UIColor colorWithHexString:backgroundColor];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [viewController setStatusBar:[isHidden boolValue] backgroundColor:color isDefault:[isDefault boolValue]];
+                [(NBWebViewController*)viewController setStatusBar:[isHidden boolValue] backgroundColor:color isDefault:[isDefault boolValue]];
             });
+            
+            [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
+            [retData setObject:@"" forKey:@"message"];
+        } else {
+            [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
+            [retData setObject:@"not found webview" forKey:@"message"];
         }
-        
-        retData = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 @(STATUS_CODE_SUCCESS) , @"code",
-                                 @"" , @"message",
-                                 nil];
     }
     
     [self resolve:retData];
