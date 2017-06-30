@@ -12,6 +12,8 @@ import android.view.WindowManager;
 import com.t5online.nebulacore.Nebula;
 import com.t5online.nebulacore.plugin.Plugin;
 
+import org.json.JSONObject;
+
 import shared.service.StatusBarService;
 
 /**
@@ -20,15 +22,28 @@ import shared.service.StatusBarService;
 
 public class StatusbarPlugin extends Plugin {
 
-    public void setStatusBar(boolean isHidden, String backgroundColor, boolean isDefault){
+    public static final String PLUGIN_GROUP_STATUSBAR = "statusbar";
+
+    public void setStatusBar(boolean isHidden, String backgroundColor, boolean isDefault) {
 
         StatusBarService statusBarService = (StatusBarService) Nebula.getService(StatusBarService.SERVICE_KEY_STATUSBAR);
-
-        statusBarService.hiddenStatusbar(isHidden);
-        statusBarService.setStatusBarColor(Color.parseColor(backgroundColor));
-        if(isDefault){
-            statusBarService.setStatusBarColor(com.t5online.nebulacore.R.color.colorPrimary);
+        try {
+            if (bridgeContainer.getSync()) {
+                JSONObject ret = new JSONObject();
+                ret.put("code", STATUS_CODE_ERROR);
+                ret.put("message", "unsupported synchronous");
+                resolve(ret);
+                return;
+            }
+            statusBarService.hiddenStatusbar(isHidden);
+            statusBarService.setStatusBarColor(Color.parseColor(backgroundColor));
+            if (isDefault) {
+                statusBarService.setStatusBarColor(com.t5online.nebulacore.R.color.colorPrimary);
+            }
+            resolve();
+        } catch (Exception e) {
+            reject();
         }
-        resolve();
+
     }
 }

@@ -25,7 +25,7 @@ public class StatusBarService {
 
     private Activity activity;
 
-    public StatusBarService(Activity context) {
+    public StatusBarService(Activity activity) {
         this.activity = activity;
     }
 
@@ -33,48 +33,52 @@ public class StatusBarService {
 	 * StatusBar Set Color
 	 * @param statusColor (ex Color.parse("#FFFFFF")
 	 */
-    public void setStatusBarColor(int statusColor) {
+    public void setStatusBarColor(final int statusColor) {
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Window window = activity.getWindow();
+                ViewGroup mContentView = (ViewGroup) activity.findViewById(Window.ID_ANDROID_CONTENT);
 
-        Window window = activity.getWindow();
-        ViewGroup mContentView = (ViewGroup) activity.findViewById(Window.ID_ANDROID_CONTENT);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                window.setStatusBarColor(statusColor);
-                View mChildView = mContentView.getChildAt(0);
-                
-                if (mChildView != null) {
-                    ViewCompat.setFitsSystemWindows(mChildView, true);
-                }
-            } else {
-                int statusBarHeight = getStatusBarHeight();
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                        window.setStatusBarColor(statusColor);
+                        View mChildView = mContentView.getChildAt(0);
 
-                View mChildView = mContentView.getChildAt(0);
-                
-                if (mChildView != null) {
-                    FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) mChildView.getLayoutParams();
+                        if (mChildView != null) {
+                            ViewCompat.setFitsSystemWindows(mChildView, true);
+                        }
+                    } else {
+                        int statusBarHeight = getStatusBarHeight();
 
-                    if (lp != null && lp.topMargin < statusBarHeight && lp.height != statusBarHeight) {
-                        ViewCompat.setFitsSystemWindows(mChildView, false);
-                        mChildView.setLayoutParams(lp);
+                        View mChildView = mContentView.getChildAt(0);
+
+                        if (mChildView != null) {
+                            FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) mChildView.getLayoutParams();
+
+                            if (lp != null && lp.topMargin < statusBarHeight && lp.height != statusBarHeight) {
+                                ViewCompat.setFitsSystemWindows(mChildView, false);
+                                mChildView.setLayoutParams(lp);
+                            }
+                        }
+
+                        View statusBarView = mContentView.getChildAt(0);
+                        if (statusBarView != null && statusBarView.getLayoutParams() != null && statusBarView.getLayoutParams().height == statusBarHeight) {
+                            statusBarView.setBackgroundColor(statusColor);
+                            return;
+                        }
+                        statusBarView = new View(activity);
+                        ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, statusBarHeight);
+                        statusBarView.setBackgroundColor(statusColor);
+                        mContentView.addView(statusBarView, 0, lp);
                     }
                 }
-
-                View statusBarView = mContentView.getChildAt(0);
-                if (statusBarView != null && statusBarView.getLayoutParams() != null && statusBarView.getLayoutParams().height == statusBarHeight) {
-                    statusBarView.setBackgroundColor(statusColor);
-                    return;
-                }
-                statusBarView = new View(activity);
-                ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, statusBarHeight);
-                statusBarView.setBackgroundColor(statusColor);
-                mContentView.addView(statusBarView, 0, lp);
             }
-        }
+        });
     }
 
     /**
@@ -121,11 +125,16 @@ public class StatusBarService {
         return result;
     }
 
-    public void hiddenStatusbar(boolean isHidden) {
-        if(isHidden){
-            activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }else{
-            activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
+    public void hiddenStatusbar(final boolean isHidden) {
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if(isHidden){
+                    activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                }else{
+                    activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                }
+            }
+        });
     }
 }
